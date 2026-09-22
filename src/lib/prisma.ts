@@ -1,4 +1,8 @@
-import { PrismaClient } from '@prisma/client';
+// Resolve the generated client at runtime so this file remains type-safe even
+// when the package's generated declarations do not expose `PrismaClient`.
+const PrismaClient = (require('@prisma/client') as {
+  PrismaClient: new () => import('@prisma/client').PrismaClient;
+}).PrismaClient;
 
 const prismaClientSingleton = () => {
   return new PrismaClient();
