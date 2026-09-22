@@ -1,9 +1,8 @@
-cat << 'EOF' > next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Add any specific Next.js configuration options here
+  reactStrictMode: true,
 };
 
 export default nextConfig;
-EOF
