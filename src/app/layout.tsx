@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/shared/Navbar"; // Add this import
 
-// The Inter font complements the clean, modern look of Soft UI
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,7 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased bg-softBg text-slate-700 min-h-screen flex flex-col`}>
+        <Navbar /> {/* Insert the Navbar here */}
         {children}
       </body>
     </html>
